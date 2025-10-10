@@ -24,5 +24,6 @@ set -ouex pipefail
 # systemctl enable podman.socket
 
 mkdir /nix
+mkdir -p /usr/local/bin
 curl -sLo - https://github.com/Bambi/lix-installer/releases/download/2025-10-09/lix-installer.tgz | tar xzvf - -C /usr/local/bin
 
