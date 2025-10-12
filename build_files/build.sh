@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -ouex pipefail
 
 ### Install packages
@@ -26,3 +25,62 @@ set -ouex pipefail
 mkdir /nix
 curl -sLo - https://github.com/Bambi/lix-installer/releases/download/2025-10-09/lix-installer.tgz | tar xzvf - -C /usr/bin
 
+packages=(
+  "inotify-tools"
+  # Hyprland
+  "hyprland"
+  "hyprpaper"
+  "hyprlock"
+  "hypridle"
+  "hyprpicker"
+  "xdg-desktop-portal-hyprland"
+  # Tools
+  "xdg-user-dirs"    
+  "xdg-desktop-portal-gtk"    
+  "figlet"
+  "fastfetch"
+  "htop"
+  "xclip"
+  "zsh"
+  "fzf"
+  "brightnessctl"
+  "tumbler"
+  "slurp"
+  "cliphist"
+  "gvfs"
+  "grim"
+  "breeze"
+  "libnotify"
+  "qt5-qtwayland"
+  "qt6-qtwayland"
+  "uwsm"
+  "python-pip"
+  "python3-gobject"
+  "nm-connection-editor"
+  "network-manager-applet"
+  "fuse"
+  "ImageMagick"
+  "NetworkManager-tui"
+  # Apps
+  "waypaper"
+  "SwayNotificationCenter"
+  "kitty"
+  "wlogout"
+  "vlc"
+  "nwg-dock-hyprland"
+  "waybar"
+  "rofi-wayland"
+  "nwg-look"
+  "pavucontrol"
+  "neovim"
+  "blueman"
+  "qt6ct"
+  "nautilus"
+  # Fonts
+  "fontawesome-fonts"
+  # Other
+  "gum"
+  "matugen"
+)
+
+dnf install --assumeyes --skip-unavailable "${packages[@]}"
