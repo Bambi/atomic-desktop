@@ -35,6 +35,8 @@ packages=(
   "hyprpicker"
   "xdg-desktop-portal-hyprland"
   # Tools
+  "fish"
+  "chezmoi"
   "xdg-user-dirs"    
   "xdg-desktop-portal-gtk"    
   "figlet"
