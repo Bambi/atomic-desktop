@@ -17,6 +17,16 @@ set -ouex pipefail
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
+# Enable COPR Repositories
+COPR_REPOS=(
+  solopasha/hyprland
+  erikreider/SwayNotificationCenter
+  errornointernet/packages
+  tofik/nwg-shell 
+)
+for repo in "${COPR_REPOS[@]}"; do
+  sudo dnf copr enable -y "$repo" 2>&1 || { printf "%s - Failed to enable necessary copr repos\n" "${ERROR}"; exit 1; }
+done
 
 #### Example for enabling a System Unit File
 
